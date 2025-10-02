@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Mascotas - Mascotas Perdidas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="EstiloBancoFotosPerrosPerdidos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="InicioBancoFotos.html">
+                <i class="fas fa-heart"></i> Mascotas Perdidas
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reportar.html">
+                            <i class="fas fa-plus-circle"></i> Reportar Perdida
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buscar.html">
+                            <i class="fas fa-search"></i> Buscar Mascota
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="galeria.html">
+                            <i class="fas fa-images"></i> Galería
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adopcion.html">
+                            <i class="fas fa-paw"></i> Adopción
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-primary text-white py-5 mt-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4"><i class="fas fa-images"></i> Galería de Mascotas</h1>
+            <p class="lead">Explora todas las mascotas reportadas. Cada foto puede ser la clave para reunir una familia.</p>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-3"><h4 class="text-primary fw-bold" id="total-perdidas">0</h4><small class="text-muted">Perdidas</small></div>
+                <div class="col-6 col-md-3 mb-3"><h4 class="text-success fw-bold" id="total-encontradas">0</h4><small class="text-muted">Encontradas</small></div>
+                <div class="col-6 col-md-3 mb-3"><h4 class="text-info fw-bold" id="total-adopcion">0</h4><small class="text-muted">En Adopción</small></div>
+                <div class="col-6 col-md-3 mb-3"><h4 class="text-warning fw-bold" id="total-general">0</h4><small class="text-muted">Total</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra de búsqueda -->
+    <section class="py-3">
+        <div class="container text-center">
+            <input type="text" id="searchInput" class="form-control w-50 mx-auto" placeholder="Buscar por nombre o zona...">
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="py-4">
+        <div class="container text-center">
+            <button class="filter-chip active" onclick="filterGallery('todos')"><i class="fas fa-th"></i> Todas</button>
+            <button class="filter-chip" onclick="filterGallery('perdido')"><i class="fas fa-search"></i> Perdidas</button>
+            <button class="filter-chip" onclick="filterGallery('encontrado')"><i class="fas fa-check-circle"></i> Encontradas</button>
+            <button class="filter-chip" onclick="filterGallery('adopcion')"><i class="fas fa-heart"></i> Adopción</button>
+        </div>
+    </section>
+
+    <!-- Galería Principal -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row" id="galleryContainer">
+                <!-- Mascotas cargadas dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Detalles -->
+    <div class="modal fade" id="mascotaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles de la Mascota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Historias de Éxito -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-6 fw-bold text-primary mb-4">Historias de Éxito</h2>
+            <div class="row g-4">
+                <div class="col-md-4"><div class="card h-100 border-success"><div class="card-header bg-success text-white"><i class="fas fa-trophy fa-2x"></i></div><div class="card-body"><h5 class="text-success">Max Regresó a Casa</h5><p>Encontrado en Miraflores después de 3 días gracias a un reporte comunitario.</p><span class="badge bg-success">15/09/2024</span></div></div></div>
+                <div class="col-md-4"><div class="card h-100 border-success"><div class="card-header bg-success text-white"><i class="fas fa-heart fa-2x"></i></div><div class="card-body"><h5 class="text-success">Luna Encontró Hogar</h5><p>Rescatada de las calles y adoptada mediante la plataforma.</p><span class="badge bg-success">18/09/2024</span></div></div></div>
+                <div class="col-md-4"><div class="card h-100 border-success"><div class="card-header bg-success text-white"><i class="fas fa-users fa-2x"></i></div><div class="card-body"><h5 class="text-success">Comunidad Unida</h5><p>Más de 50 personas compartieron la foto de Buddy hasta encontrarlo.</p><span class="badge bg-success">20/09/2024</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h3><i class="fas fa-plus-circle"></i> ¿Tu Mascota No Está Aquí?</h3>
+            <a href="reportar.html" class="btn btn-warning btn-lg"><i class="fas fa-camera"></i> Reportar Ahora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4"><h5><i class="fas fa-heart"></i> Mascotas Perdidas</h5><p>Conectando corazones, reuniendo familias.</p></div>
+                <div class="col-lg-2"><h6>Enlaces</h6><ul class="list-unstyled"><li><a href="index.html" class="text-light">Inicio</a></li><li><a href="reportar.html" class="text-light">Reportar</a></li><li><a href="buscar.html" class="text-light">Buscar</a></li><li><a href="galeria.html" class="text-light">Galería</a></li></ul></div>
+                <div class="col-lg-2"><h6>Ayuda</h6><ul class="list-unstyled"><li><a href="contacto.html" class="text-light">Contacto</a></li><li><a href="#" class="text-light">FAQ</a></li><li><a href="#" class="text-light">Términos</a></li><li><a href="#" class="text-light">Privacidad</a></li></ul></div>
+                <div class="col-lg-4"><h6>Síguenos</h6><a href="#" class="text-light fs-4 me-3"><i class="fab fa-facebook"></i></a><a href="#" class="text-light fs-4 me-3"><i class="fab fa-twitter"></i></a><a href="#" class="text-light fs-4 me-3"><i class="fab fa-instagram"></i></a><a href="#" class="text-light fs-4"><i class="fab fa-whatsapp"></i></a></div>
+            </div>
+            <hr>
+            <p class="text-center">&copy; <span id="year"></span> Mascotas Perdidas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Volver Arriba -->
+    <button id="backToTop" class="btn btn-primary position-fixed" style="bottom:20px; right:20px; display:none; z-index:1000;" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/51999999999" class="btn btn-success position-fixed" style="bottom:80px; right:20px; z-index:1000;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="FuncionesPagina.js"></script>
+
+</body>
+</html>

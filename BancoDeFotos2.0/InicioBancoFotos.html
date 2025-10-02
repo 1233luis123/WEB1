@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas Perdidas - Inicio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="EstiloBancoFotosPerrosPerdidos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="InicioBancoFotos.html">
+                <i class="fas fa-heart"></i> Mascotas Perdidas
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="InicioBancoFotos.html">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ReportesP.html">
+                            <i class="fas fa-plus-circle"></i> Reportar Perdida
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="BuscarPerro.html">
+                            <i class="fas fa-search"></i> Buscar Mascota
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="GaleriaMascotas.html">
+                            <i class="fas fa-images"></i> Galería
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adopcion.html">
+                            <i class="fas fa-paw"></i> Adopción
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-white mb-4">
+                        Reuniendo familias con sus mascotas perdidas
+                    </h1>
+                    <p class="lead text-white mb-4">
+                        Una plataforma donde las comunidades animalistas comparten fotografías de perros perdidos, 
+                        creando un banco de imágenes para ayudar a reunir a las mascotas con sus familias.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="ReportesP.html" class="btn btn-warning btn-lg">
+                            <i class="fas fa-plus-circle"></i> Reportar Pérdida
+                        </a>
+                        <a href="BuscarPerro.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-search"></i> Buscar Mascota
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Perro feliz" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="display-5 fw-bold">¿Cómo funciona?</h2>
+                    <p class="lead text-muted">Simple y efectivo proceso para ayudar a encontrar mascotas perdidas</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera fa-3x text-primary"></i>
+                        </div>
+                        <h4>1. Reporta</h4>
+                        <p>Sube fotos y detalles de la mascota perdida con ubicación y fecha exacta del avistamiento.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-share-alt fa-3x text-success"></i>
+                        </div>
+                        <h4>2. Comparte</h4>
+                        <p>La información se comparte automáticamente con la red de comunidades animalistas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart fa-3x text-danger"></i>
+                        </div>
+                        <h4>3. Reúne</h4>
+                        <p>Ayudamos a conectar a las familias con sus mascotas perdidas a través de nuestra red.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5">
+        <div class="container">
+            <div class="row text-center text-white">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold" id="mascotas-reportadas">150</h3>
+                        <p>Mascotas Reportadas</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold" id="mascotas-encontradas">89</h3>
+                        <p>Mascotas Encontradas</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold" id="comunidades">25</h3>
+                        <p>Comunidades Activas</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <h3 class="display-4 fw-bold" id="voluntarios">320</h3>
+                        <p>Voluntarios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Reports -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col">
+                    <h2 class="display-6 fw-bold text-center">Reportes Recientes</h2>
+                    <p class="text-center text-muted">Las últimas mascotas reportadas como perdidas</p>
+                </div>
+            </div>
+            <div class="row g-4" id="recent-reports">
+                <!-- Los reportes se cargarán dinámicamente -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="galeria.html" class="btn btn-primary btn-lg">Ver Todas las Mascotas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-heart"></i> Mascotas Perdidas</h5>
+                    <p>Conectando corazones, reuniendo familias. Una plataforma dedicada a ayudar a encontrar mascotas perdidas.</p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="InicioBancoFotos.html" class="text-light-emphasis">Inicio</a></li>
+                        <li><a href="ReportesP.html" class="text-light-emphasis">Reportar</a></li>
+                        <li><a href="BuscarPerro.html" class="text-light-emphasis">Buscar</a></li>
+                        <li><a href="galeria.html" class="text-light-emphasis">Galería</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Ayuda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contacto.html" class="text-light-emphasis">Contacto</a></li>
+                        <li><a href="#" class="text-light-emphasis">FAQ</a></li>
+                        <li><a href="#" class="text-light-emphasis">Términos</a></li>
+                        <li><a href="#" class="text-light-emphasis">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Síguenos</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Mascotas Perdidas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="FuncionesPagina.js"></script>
+</body>
+</html>

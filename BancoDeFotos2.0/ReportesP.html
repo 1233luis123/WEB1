@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Mascota Perdida - Mascotas Perdidas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+  <div class="container">
+    <!-- Logo / Marca -->
+    <a class="navbar-brand fw-bold" href="InicioBancoFotos.html">
+      <i class="fas fa-heart me-2"></i> Mascotas Perdidas
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto"> <!-- Menú alineado a la derecha -->
+        <li class="nav-item">
+          <a class="nav-link" href="InicioBancoFotos.html">
+            <i class="fas fa-home me-1"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="ReportesP.html">
+            <i class="fas fa-plus-circle me-1"></i> Reportar Perdida
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BuscarPerro.html">
+            <i class="fas fa-search me-1"></i> Buscar Mascota
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="galeria.html">
+            <i class="fas fa-images me-1"></i> Galería
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="adopcion.html">
+            <i class="fas fa-paw me-1"></i> Adopción
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">
+            <i class="fas fa-envelope me-1"></i> Contacto
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Header -->
+    <section class="bg-primary text-white py-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-4 fw-bold mb-4">
+          <i class="fas fa-plus-circle"></i> Reportar Mascota Perdida
+        </h1>
+        <p class="lead">
+          Ayúdanos a encontrar tu mascota llenando este formulario con la mayor información posible. 
+          Entre más detalles proporciones, mayores serán las posibilidades de encontrarla.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Información importante -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center mb-3">
+                    <i class="fas fa-clock fa-2x text-primary mb-2"></i>
+                    <h6>Reporta Inmediatamente</h6>
+                    <p class="small">Las primeras horas son cruciales</p>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <i class="fas fa-camera fa-2x text-success mb-2"></i>
+                    <h6>Fotos Claras</h6>
+                    <p class="small">Sube fotos recientes y nítidas</p>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <i class="fas fa-share-alt fa-2x text-warning mb-2"></i>
+                    <h6>Compartimos Automáticamente</h6>
+                    <p class="small">Tu reporte llegará a toda la red</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Reporte -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-container">
+                        <form id="reportForm" novalidate>
+                            <div class="row">
+                                <div class="col-12 mb-4">
+                                    <h3 class="text-primary mb-3">
+                                        <i class="fas fa-paw"></i> Información de la Mascota
+                                    </h3>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre" class="form-label">Nombre de la Mascota *</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required 
+                                           placeholder="Ej: Max, Luna, Rocky">
+                                    <div class="invalid-feedback">
+                                        Por favor ingresa el nombre de tu mascota.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="especie" class="form-label">Especie *</label>
+                                    <select class="form-select" id="especie" name="especie" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Perro">Perro</option>
+                                        <option value="Gato">Gato</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="raza" class="form-label">Raza *</label>
+                                    <input type="text" class="form-control" id="raza" name="raza" required 
+                                           placeholder="Ej: Golden Retriever, Mestizo">
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="color" class="form-label">Color *</label>
+                                    <input type="text" class="form-control" id="color" name="color" required 
+                                           placeholder="Ej: Dorado, Negro, Café y blanco">
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <label for="sexo" class="form-label">Sexo</label>
+                                    <select class="form-select" id="sexo" name="sexo">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Macho">Macho</option>
+                                        <option value="Hembra">Hembra</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <label for="edad" class="form-label">Edad</label>
+                                    <input type="text" class="form-control" id="edad" name="edad" 
+                                           placeholder="Ej: 3 años, Cachorro">
+                                </div>
+                                
+                                <div class="col-md-4 mb-3">
+                                    <label for="tamaño" class="form-label">Tamaño</label>
+                                    <select class="form-select" id="tamaño" name="tamaño">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Pequeño">Pequeño (hasta 10kg)</option>
+                                        <option value="Mediano">Mediano (10-25kg)</option>
+                                        <option value="Grande">Grande (25kg+)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Información del Extravío -->
+                            <div class="row mt-4">
+                                <div class="col-12 mb-4">
+                                    <h3 class="text-primary mb-3">
+                                        <i class="fas fa-map-marker-alt"></i> Información del Extravío
+                                    </h3>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="fechaPerdida" class="form-label">Fecha de Pérdida *</label>
+                                    <input type="date" class="form-control" id="fechaPerdida" name="fechaPerdida" required>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="horaPerdida" class="form-label">Hora Aproximada</label>
+                                    <input type="time" class="form-control" id="horaPerdida" name="horaPerdida">
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="ubicacion" class="form-label">Ubicación donde se perdió *</label>
+                                    <input type="text" class="form-control" id="ubicacion" name="ubicacion" required 
+                                           placeholder="Dirección completa o referencia (Ej: Parque Kennedy, Miraflores)">
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="circunstancias" class="form-label">Circunstancias de la Pérdida</label>
+                                    <select class="form-select" id="circunstancias" name="circunstancias">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Se escapó de casa">Se escapó de casa</option>
+                                        <option value="Se perdió en el parque">Se perdió en el parque</option>
+                                        <option value="Se asustó por ruidos">Se asustó por ruidos (fuegos artificiales, truenos)</option>
+                                        <option value="Accidente de tránsito">Accidente de tránsito</option>
+                                        <option value="Robo">Posible robo</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Descripción Detallada -->
+                            <div class="row mt-4">
+                                <div class="col-12 mb-4">
+                                    <h3 class="text-primary mb-3">
+                                        <i class="fas fa-file-text"></i> Descripción Detallada
+                                    </h3>
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="descripcion" class="form-label">Descripción Física y Comportamiento *</label>
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="4" required
+                                              placeholder="Describe características especiales: cicatrices, manchas, comportamiento, si lleva collar, placa de identificación, etc."></textarea>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="collar" class="form-label">¿Lleva Collar?</label>
+                                    <select class="form-select" id="collar" name="collar">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Sí, con placa">Sí, con placa de identificación</option>
+                                        <option value="Sí, sin placa">Sí, pero sin placa</option>
+                                        <option value="No">No lleva collar</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="chip" class="form-label">¿Tiene Microchip?</label>
+                                    <select class="form-select" id="chip" name="chip">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Sí">Sí, tiene microchip</option>
+                                        <option value="No">No tiene microchip</option>
+                                        <option value="No sé">No estoy seguro</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="esterilizado" class="form-label">¿Está Esterilizado/Castrado?</label>
+                                    <select class="form-select" id="esterilizado" name="esterilizado">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="Sí">Sí</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="recompensa" class="form-label">Recompensa (Opcional)</label>
+                                    <input type="text" class="form-control" id="recompensa" name="recompensa" 
+                                           placeholder="Ej: S/ 500, Sin recompensa económica">
+                                </div>
+                            </div>
+
+                            <!-- Fotos -->
+                            <div class="row mt-4">
+                                <div class="col-12 mb-4">
+                                    <h3 class="text-primary mb-3">
+                                        <i class="fas fa-camera"></i> Fotografías
+                                    </h3>
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Subir Fotos de tu Mascota *</label>
+                                    <div class="file-upload">
+                                        <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                                        <p class="mb-2"><strong>Arrastra y suelta las fotos aquí</strong></p>
+                                        <p class="text-muted">o haz clic para seleccionar archivos</p>
+                                        <p class="small text-muted">Máximo 5 fotos • JPG, PNG • Máximo 5MB cada una</p>
+                                    </div>
+                                    <input type="file" id="petImages" name="petImages" multiple accept="image/*" style="display: none;">
+                                    <div id="imagePreview" class="image-preview mt-3"></div>
+                                </div>
+                            </div>
+
+                            <!-- Información de Contacto -->
+                            <div class="row mt-4">
+                                <div class="col-12 mb-4">
+                                    <h3 class="text-primary mb-3">
+                                        <i class="fas fa-user"></i> Información de Contacto
+                                    </h3>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactoNombre" class="form-label">Nombre Completo *</label>
+                                    <input type="text" class="form-control" id="contactoNombre" name="contactoNombre" required>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactoTelefono" class="form-label">Teléfono *</label>
+                                    <input type="tel" class="form-control" id="contactoTelefono" name="contactoTelefono" required 
+                                           placeholder="999 999 999">
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactoEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="contactoEmail" name="contactoEmail" 
+                                           placeholder="tu.email@ejemplo.com">
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactoWhatsApp" class="form-label">WhatsApp</label>
+                                    <input type="tel" class="form-control" id="contactoWhatsApp" name="contactoWhatsApp" 
+                                           placeholder="999 999 999">
+                                </div>
+                            </div>
+
+                            <!-- Términos y Condiciones -->
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="terminos" name="terminos" required>
+                                        <label class="form-check-label" for="terminos">
+                                            Acepto que la información proporcionada sea compartida con la red de comunidades animalistas 
+                                            para ayudar en la búsqueda de mi mascota. *
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="notificaciones" name="notificaciones">
+                                        <label class="form-check-label" for="notificaciones">
+                                            Deseo recibir notificaciones sobre posibles avistamientos de mi mascota.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <button type="button" class="btn btn-secondary btn-lg me-3" onclick="history.back()">
+                                        <i class="fas fa-arrow-left"></i> Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-paper-plane"></i> Enviar Reporte
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consejos adicionales -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-6 fw-bold">Consejos para Encontrar tu Mascota</h2>
+                    <p class="text-muted">Acciones adicionales que puedes tomar mientras esperamos noticias</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                        <h5>Búsqueda Activa</h5>
+                        <p>Camina por la zona donde se perdió, llama su nombre y lleva su comida favorita.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <i class="fas fa-bullhorn fa-3x text-success mb-3"></i>
+                        <h5>Difunde en Redes</h5>
+                        <p>Comparte en Facebook, Instagram y WhatsApp con fotos claras y información de contacto.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <i class="fas fa-clipboard fa-3x text-warning mb-3"></i>
+                        <h5>Coloca Carteles</h5>
+                        <p>Pega carteles con foto en postes, veterinarias y tiendas de mascotas de la zona.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center">
+                        <i class="fas fa-phone fa-3x text-info mb-3"></i>
+                        <h5>Contacta Refugios</h5>
+                        <p>Llama a refugios, veterinarias y la municipalidad para reportar la pérdida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-heart"></i> Mascotas Perdidas</h5>
+                    <p>Conectando corazones, reuniendo familias. Una plataforma dedicada a ayudar a encontrar mascotas perdidas.</p>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Enlaces</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="InicioBancoFotos.html" class="text-light-emphasis">Inicio</a></li>
+                        <li><a href="ReportesP.html" class="text-light-emphasis">Reportar</a></li>
+                        <li><a href="BuscarPerro.html" class="text-light-emphasis">Buscar</a></li>
+                        <li><a href="galeria.html" class="text-light-emphasis">Galería</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h6>Ayuda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contacto.html" class="text-light-emphasis">Contacto</a></li>
+                        <li><a href="#" class="text-light-emphasis">FAQ</a></li>
+                        <li><a href="#" class="text-light-emphasis">Términos</a></li>
+                        <li><a href="#" class="text-light-emphasis">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Síguenos</h6>
+                             <div class="d-flex">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <small>&copy; 2025 Mascotas Perdidas. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Volver Arriba -->
+    <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; right: 20px; display: none; z-index: 1000;" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="FuncionesPagina.js"></script>
+    <script>
+        // Validación adicional del formulario
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>
